@@ -40,7 +40,7 @@ public class AdminFilter implements Filter {
       
         UserDB userdb = new UserDB();
         User user = userdb.get(email);
-        //check if the roleId is 1 and the email is not null
+        //check if the roleId is 1 and then redirects to admin page with a message
         if(user.getRole().getRoleId() == 1 ){
             session.setAttribute("message", "Successfully logged in with Admin profile! ");
             chain.doFilter(request, response);
